@@ -139,9 +139,9 @@ int main(int argc, char *argv[]) {
 
         if(pid < 0){
             error("on fork");
-        } else if(pid != 0){ //client process
+        } else if(pid != 0){ //parent process
             close(newsockfd);
-        } else { //parent process
+        } else { //client process
             close(sockfd);
             /* If connection is established then start communicating */
             bzero(buffer, 256);
